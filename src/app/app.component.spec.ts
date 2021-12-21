@@ -1,19 +1,24 @@
 import { TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
+import { LotteryModule } from './lottery/lottery.module';
+import { VariablesService } from './providers/variables.service';
 
 describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [
-        RouterTestingModule
+        RouterTestingModule,
+        LotteryModule,
+        
       ],
       declarations: [
         AppComponent
       ],
+      providers:[VariablesService]
     }).compileComponents();
   });
-
+ 
   it('should create the app', () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
@@ -26,10 +31,5 @@ describe('AppComponent', () => {
     expect(app.title).toEqual('GoldenRaceTest');
   });
 
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('GoldenRaceTest app is running!');
-  });
+
 });

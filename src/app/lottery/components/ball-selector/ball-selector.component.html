@@ -1,0 +1,37 @@
+<div class="row justify-content-center m-5" *ngIf="!results">
+    <div *ngFor="let item of balls;let i = index" class="col-2 col-xs-2 col-sm-1 col-md-1 col-lg-1">
+        <div>
+            <div class="ball" [style.background]='item.color' [style.color]="item.selected?'black':'white'"
+                [style.opacity]="item.selected?1:0.5" (click)="selectitem(i)">
+                {{item.number}}
+            </div>
+        </div>
+    </div>
+    <div (click)="clearSelector()" class="clear" *ngIf="variables?.index">
+        Clear selector
+    </div>
+
+</div>
+
+<div class="row justify-content-center m-5" *ngIf="results">
+    <div class="col-12">
+        <div class="row justify-content-center">
+            Result
+        </div>
+    </div>
+    <div class="col-12 ">
+        <div *ngIf="results.number != 0" style="display: flex;justify-content:space-around;">
+            <div class="ball" [style.background]='results.color' [style.color]="'white'">
+                {{results.number}}
+            </div>
+        </div>
+        <div class="result__won" *ngIf="results.number != 0">
+            YOU WON
+        </div>
+        <div class="result__lost" *ngIf="results.number == 0">
+            YOU LOST
+        </div>
+
+    </div>
+
+</div>

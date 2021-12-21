@@ -1,0 +1,20 @@
+.ball{
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    padding-top: 1px;
+    text-align: center;
+    color: white;
+    cursor: pointer;
+}
+
+.noball{
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    padding-top: 1px;
+    text-align: center;
+    color: white;
+    cursor: pointer;
+    background-color: gray;
+}

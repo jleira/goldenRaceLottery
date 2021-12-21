@@ -1,0 +1,48 @@
+<div class="row justify-content-md-center">
+    <div class="col-12">
+        <div class="row justify-content-md-center pb-5 pt-2 bg-light">
+            <div *ngFor="let item of balls;let i = index" class="col-2 col-xs-2 col-sm-1 col-md-1 col-lg-1">
+                <div>
+                    <div *ngIf="item" class="ball" [style.background]='item.color'>
+                        {{item.number}}
+                    </div>
+                    <div *ngIf="!item" class="noball">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-12  bg-light" >
+        <form [formGroup]="slipForm" (ngSubmit)="apuesta()" >
+            <div class="form-row align-items-center">
+                <div class="col-auto">
+                    <label class="sr-only" for="inlineFormInputGroup">Bet</label>
+                    <div class="input-group mb-2">
+                      <div class="input-group-prepend">
+                        <div class="input-group-text">x{{variables?.index}}</div>
+                      </div>
+                      <input type="number" min="0" class="form-control" formControlName="slip" placeholder="bet">
+                      <br>
+                          <small *ngIf="slip!.invalid" class="form-text text-muted" >
+                            Minimun is 5€
+                          </small>
+                    </div>
+                  </div>
+            </div>
+            <div class="col-auto">
+                <button type="submit"  *ngIf="variables?.index" [disabled]="this.slipForm.invalid" class="btn btn-primary mb-2">Play</button>
+              </div>
+        </form>
+    </div>
+    <div class="col-12"  *ngIf="send!">
+        <div class="row justify-content-md-center primary">
+            Total: {{variables?.index!*slip!.value}}€
+        </div>  
+    </div>
+    <br>
+    <div class="col-12"  *ngIf="send!">
+        <div class="row justify-content-md-center primary">
+            <button type="button" class="btn btn-primary mb-2" (click)="bet()">{{nbet?'New Bet':'Place Bet'}}</button>
+        </div>  
+    </div>
+</div>

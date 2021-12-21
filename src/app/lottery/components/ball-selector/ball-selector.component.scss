@@ -1,0 +1,27 @@
+.ball{
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    padding-top: 3px;
+    text-align: center;
+    color: white;
+    cursor: pointer;
+    margin: 3px;
+}
+
+.result__won{
+    text-align: center;
+    color: green;
+}   
+.result__lost{
+    text-align: center;
+    color: red;
+}   
+
+.clear{
+    text-align: center;
+    margin-top: 15px;
+    text-decoration: underline;
+    color: #328ad7;
+    cursor: pointer;
+}

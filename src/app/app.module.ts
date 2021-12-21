@@ -3,6 +3,8 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { LotteryModule } from './lottery/lottery.module';
+import { VariablesService } from './providers/variables.service';
 
 @NgModule({
   declarations: [
@@ -10,9 +12,10 @@ import { AppComponent } from './app.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    LotteryModule
   ],
-  providers: [],
+  providers: [VariablesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
