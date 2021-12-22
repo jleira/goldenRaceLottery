@@ -13,9 +13,6 @@ describe('HomeComponent', () => {
     await TestBed.configureTestingModule({
       declarations: [ HomeComponent ],
       imports:[
-        LotteryModule,
-        FormsModule,
-        ReactiveFormsModule,    
       ],
       providers:[VariablesService]
     })
@@ -26,6 +23,7 @@ describe('HomeComponent', () => {
     fixture = TestBed.createComponent(HomeComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
+    
   });
 
   it('should create', () => {

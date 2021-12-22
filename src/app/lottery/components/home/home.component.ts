@@ -10,13 +10,10 @@ import { VariablesService } from 'src/app/providers/variables.service';
 export class HomeComponent implements OnInit {
 
   constructor(
-    public variables:VariablesService
   ) {
-
    }
 
   ngOnInit(): void {
-
   }
 
 }
